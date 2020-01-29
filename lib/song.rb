@@ -32,6 +32,6 @@ class Song
   end
 
   def self.artist_count
-    @@artist.ijnect(Hash.new(0)) { |hash, element| hash[element] += 1; hash}
+    @@artists.ijnect(Hash.new(0)) { |hash, element| hash[element] += 1; hash}
     end
 end

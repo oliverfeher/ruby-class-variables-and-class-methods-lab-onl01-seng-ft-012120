@@ -7,27 +7,27 @@ class Song
   
   def initialize (name, artist, genre)
     @name = name
-    @artists = artist
+    @artist = artist
     @genre = genre
-    
+
     @@count += 1
     @@genres << genre
     @@artists << artist
   end
   
-  def count
+  def self.count
     @@count
   end
   
-  def genres
+  def self.genres
     @@genres.uniq
   end
   
-  def artists
+  def self.artists
     @@artists.uniq
   end
   
-  def genre_count
-    @@genres.map { |genre, count| genre count +=1}.to_h
+  def self.genre_count
+    @@genres.inject(Hash.new(0)) { |hash, element| hash[element] += 1; hash }
   end
 end
